@@ -1,6 +1,6 @@
-import { clsx, type ClassValueArray } from 'clsx'
+import { clsx, type ClassValue } from 'clsx'
 
-export function cn(...inputs: ClassValueArray) {
+export function cn(...inputs: ClassValue[]) {
   return clsx(inputs)
 }
 
@@ -28,6 +28,11 @@ export function getProviderColor(provider: string): string {
     'Mistral AI': 'text-orange-500',
     Cohere: 'text-red-400',
     '01.AI': 'text-yellow-400',
+    'Moonshot AI': 'text-indigo-400',
+    MiniMax: 'text-pink-400',
+    'Z.ai': 'text-emerald-400',
+    'Nex AGI': 'text-lime-400',
+    Tencent: 'text-sky-400',
   }
   return colors[provider] || 'text-gray-400'
 }
@@ -44,6 +49,11 @@ export function getProviderBg(provider: string): string {
     'Mistral AI': 'bg-orange-600/10 border-orange-600/20',
     Cohere: 'bg-red-500/10 border-red-500/20',
     '01.AI': 'bg-yellow-500/10 border-yellow-500/20',
+    'Moonshot AI': 'bg-indigo-500/10 border-indigo-500/20',
+    MiniMax: 'bg-pink-500/10 border-pink-500/20',
+    'Z.ai': 'bg-emerald-500/10 border-emerald-500/20',
+    'Nex AGI': 'bg-lime-500/10 border-lime-500/20',
+    Tencent: 'bg-sky-500/10 border-sky-500/20',
   }
   return colors[provider] || 'bg-gray-500/10 border-gray-500/20'
 }
