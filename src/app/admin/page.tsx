@@ -12,20 +12,11 @@ export default function AdminPage() {
   const handleUpdate = async (source: string) => {
     setIsUpdating(true)
     setUpdateResult(null)
-
-    try {
-      const res = await fetch('/api/update', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ source }),
-      })
-      const data = await res.json()
-      setUpdateResult(data.message || '更新完成')
-    } catch {
-      setUpdateResult('更新失败，请检查网络连接')
-    } finally {
+    // GitHub Pages 为纯静态站点，数据更新需在本地修改 data.ts 后重新部署
+    setTimeout(() => {
+      setUpdateResult(`静态站点模式下，请修改 src/lib/data.ts 数据文件后，git push 到 GitHub 自动更新。`)
       setIsUpdating(false)
-    }
+    }, 500)
   }
 
   return (
